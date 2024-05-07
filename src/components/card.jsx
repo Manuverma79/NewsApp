@@ -1,3 +1,12 @@
+const truncate = (inputText) => {
+  if (inputText == null) {
+    return inputText;
+  }
+  return inputText.length > 200
+    ? inputText.substring(0, 189) + "..."
+    : inputText;
+};
+
 const Card = ({ title, description, image, link }) => {
   return (
     <a
@@ -8,11 +17,11 @@ const Card = ({ title, description, image, link }) => {
         <img src={image} alt="img" className="object-cover w-full h-full" />
       </div>
       <div className="flex flex-col justify-center px-4 text-left">
-        <p className="text-[15px] md:text-3xl hover:underline font-serif text-text tracking-[0.1em] font-normal">
+        <p className="text-[15px] md:text-3xl hover:underline font-serif text-text tracking-[0.1em] text-pretty font-normal">
           {title}
         </p>
-        <p className="text-sm font-light font-description text-text">
-          {description}
+        <p className="text-sm font-light text-pretty font-description text-text">
+          {truncate(description)}
         </p>
       </div>
     </a>
