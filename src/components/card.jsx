@@ -10,7 +10,7 @@ const truncate = (inputText) => {
 const Card = ({ title, description, image, link }) => {
   return (
     <a
-      href="link"
+      href={link}
       className="flex flex-col w-2/5 m-3 no-underline shadow-md hover:shadow-lg hover:shadow-black h-2/5 lg:h-1/2 lg:w-3/4 lg:flex-row shadow-black bg-main rounded-3xl"
     >
       <div className="relative w-full m-0 overflow-hidden max-lg:rounded-b-none lg:rounded-r-none lg:w-1/3 shrink-0 rounded-3xl bg-clip-border">
